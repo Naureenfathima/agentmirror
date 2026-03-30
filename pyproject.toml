@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "agentmirror"
+version = "0.1.0"
+description = "Production evaluation for multi-agent AI systems without ground truth."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Naureen Fathima" }
+]
+keywords = [
+    "llm", "agents", "evaluation", "langgraph", "langchain",
+    "multi-agent", "ai", "evals", "consistency"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "sentence-transformers>=2.7",
+    "langchain-core>=0.2",
+    "langgraph>=0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio",
+    "langchain-anthropic",
+    "langchain-openai",
+]
+
+[project.urls]
+Homepage = "https://github.com/naureen-fathima/agentmirror"
+Issues = "https://github.com/naureen-fathima/agentmirror/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentmirror*"]
